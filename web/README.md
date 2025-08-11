@@ -1,49 +1,164 @@
-# Getting Started with Create React App
+# Chime Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicación web frontend construida con React y Amazon Chime SDK para videoconferencias.
 
-## Available Scripts
+## 🚀 Tecnologías
 
-In the project directory, you can run:
+- **React 18.2.0** - Framework frontend
+- **Amazon Chime SDK JS** - SDK para videoconferencias
+- **Amazon Chime SDK Component Library React** - Componentes UI predefinidos
+- **Styled Components** - Styling con CSS-in-JS
+- **Styled System** - Sistema de diseño
 
-### `npm start`
+## 📋 Prerrequisitos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js 16 o superior
+- npm o yarn
+- Servidor backend ejecutándose (ver [documentación del servidor](../server/README.md))
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Instalación
 
-### `npm test`
+1. **Navega al directorio web:**
+   ```bash
+   cd web
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Instala las dependencias:**
+   ```bash
+   npm install
+   ```
 
-### `npm run build`
+3. **Configura las variables de entorno:**
+   ```bash
+   # Crea un archivo .env.local (opcional)
+   REACT_APP_API_URL=http://localhost:3001
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🏃‍♂️ Ejecución
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Modo Desarrollo
+```bash
+npm start
+```
+- Abre [http://localhost:3000](http://localhost:3000) en tu navegador
+- La página se recarga automáticamente al hacer cambios
+- Los errores de lint aparecen en la consola
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Modo Producción
+```bash
+npm run build
+```
+- Construye la aplicación para producción en la carpeta `build/`
+- Optimiza el build para mejor rendimiento
+- Los archivos están minificados y con hashes
 
-### `npm run eject`
+## 🧪 Testing
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm test
+```
+Ejecuta las pruebas en modo interactivo.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📁 Estructura del Proyecto
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+web/
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+├── src/
+│   ├── components/     # Componentes React
+│   ├── hooks/         # Custom hooks
+│   ├── utils/         # Utilidades
+│   ├── styles/        # Estilos globales
+│   ├── App.js         # Componente principal
+│   └── index.js       # Punto de entrada
+├── package.json
+└── README.md
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🎯 Características Principales
 
-## Learn More
+### Videoconferencias
+- **Unirse a reuniones** - Conectar a reuniones existentes
+- **Crear reuniones** - Generar nuevas sesiones
+- **Audio/Video** - Control de micrófono y cámara
+- **Compartir pantalla** - Funcionalidad de screen sharing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Interfaz de Usuario
+- **Responsive Design** - Adaptable a diferentes dispositivos
+- **Componentes Chime** - UI components predefinidos
+- **Styled Components** - Styling modular y reutilizable
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Integración Backend
+- **API REST** - Comunicación con el servidor Node.js
+- **Gestión de reuniones** - CRUD de reuniones Chime
+- **Autenticación** - Manejo de sesiones de usuario
+
+## 🔧 Configuración Avanzada
+
+### Variables de Entorno
+Crea un archivo `.env.local` para configuraciones específicas:
+
+```env
+REACT_APP_API_URL=http://localhost:3001
+REACT_APP_CHIME_REGION=us-east-1
+REACT_APP_DEBUG=true
+```
+
+### Personalización de Estilos
+Los estilos utilizan Styled Components y Styled System:
+
+```jsx
+import styled from 'styled-components';
+import { space, color } from 'styled-system';
+
+const Button = styled.button`
+  ${space}
+  ${color}
+  border-radius: 4px;
+`;
+```
+
+## 🐛 Solución de Problemas
+
+### Problemas Comunes
+
+1. **Error de CORS:**
+   - Verifica que el servidor backend esté ejecutándose
+   - Confirma la configuración de CORS en el servidor
+
+2. **Problemas de Audio/Video:**
+   - Verifica permisos del navegador para micrófono/cámara
+   - Comprueba la configuración de Chime SDK
+
+3. **Errores de Build:**
+   ```bash
+   # Limpia node_modules y reinstala
+   rm -rf node_modules package-lock.json
+   npm install
+   ```
+
+## 📚 Recursos Adicionales
+
+- [Create React App Documentation](https://facebook.github.io/create-react-app/docs/getting-started)
+- [React Documentation](https://reactjs.org/)
+- [Amazon Chime SDK for JavaScript](https://aws.github.io/amazon-chime-sdk-js/)
+- [Styled Components Documentation](https://styled-components.com/)
+
+## 🤝 Contribución
+
+1. Crea una rama para tu feature
+2. Sigue las convenciones de código existentes
+3. Añade tests para nuevas funcionalidades
+4. Actualiza la documentación según sea necesario
+
+## 📄 Scripts Disponibles
+
+- `npm start` - Inicia el servidor de desarrollo
+- `npm test` - Ejecuta las pruebas
+- `npm run build` - Construye para producción
+- `npm run eject` - Expone configuración de webpack (irreversible)
 
 ### Code Splitting
 
