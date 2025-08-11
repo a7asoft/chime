@@ -102,30 +102,19 @@ flutter build linux --release
 ```
 mobile/
 ├── lib/
-│   ├── main.dart              # Punto de entrada
-│   ├── models/                # Modelos de datos
-│   │   ├── meeting.dart
-│   │   └── attendee.dart
-│   ├── screens/               # Pantallas de la app
-│   │   ├── home_screen.dart
-│   │   ├── meeting_screen.dart
-│   │   └── join_screen.dart
-│   ├── widgets/               # Widgets reutilizables
-│   │   ├── video_tile.dart
-│   │   └── control_bar.dart
-│   ├── services/              # Servicios y APIs
-│   │   ├── chime_service.dart
-│   │   └── api_service.dart
-│   └── utils/                 # Utilidades
-│       ├── constants.dart
-│       └── helpers.dart
-├── android/                   # Configuración Android
-├── ios/                       # Configuración iOS
-├── web/                       # Configuración Web
-├── macos/                     # Configuración macOS
-├── windows/                   # Configuración Windows
-├── linux/                     # Configuración Linux
-├── pubspec.yaml              # Dependencias Flutter
+│   ├── main.dart                    # Punto de entrada de la aplicación
+│   ├── api_service.dart            # Servicio para comunicación con API backend
+│   ├── meeting_list_screen.dart    # Pantalla principal con lista de reuniones
+│   └── meeting_view_screen.dart    # Pantalla de videoconferencia
+├── test/
+│   └── widget_test.dart            # Tests de widgets
+├── android/                        # Configuración Android
+├── ios/                            # Configuración iOS
+├── web/                            # Configuración Web
+├── macos/                          # Configuración macOS
+├── windows/                        # Configuración Windows
+├── linux/                          # Configuración Linux
+├── pubspec.yaml                    # Dependencias Flutter
 └── README.md
 ```
 
